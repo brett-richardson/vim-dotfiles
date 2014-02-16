@@ -1,3 +1,6 @@
+" Highlight current line
+set cursorline
+
 " Jump to the marked line and column on ', and only the marked line on `.
 nnoremap ' `
 nnoremap ` '
@@ -29,6 +32,16 @@ set number
 
 " Set color scheme
 colorscheme busybee
+
+" Change Cursor in INSERT mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+" if has("autocmd")
+"  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+"  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+"  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+" endif
 
 " Enable syntax highlighting
 syntax on
